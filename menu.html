@@ -1,0 +1,217 @@
+<DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="menu.css">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Permanent+Marker|Roboto|Baloo+Bhaina" rel="stylesheet"> 
+<meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	var open=true;
+
+function openMenu(){
+	if(open){
+		document.getElementById('mobileMenu').style.display="block";
+		open=false;
+	}
+	else{
+		closeMenu();
+	}
+			
+}
+		
+function closeMenu(){
+	document.getElementById('mobileMenu').style.display="none";
+	open=true;
+}
+function detectmob() { 
+			if( navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/webOS/i)
+				|| navigator.userAgent.match(/iPhone/i)
+				|| navigator.userAgent.match(/iPad/i)
+				|| navigator.userAgent.match(/iPod/i)
+				|| navigator.userAgent.match(/BlackBerry/i)
+				|| navigator.userAgent.match(/Windows Phone/i)
+				){
+					return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+function formobile(){
+			if(detectmob()){
+
+                                document.getElementById('menu-content').style.minWidth="1050px";
+                                document.getElementById('image-child').style.minWidth="1050px";
+                                document.getElementById('image-child').style.left="-2.5px";
+                                document.getElementsByClassName('bubble-drink').style.width="60%";
+			}
+		};
+</script>
+<title>Restaurant</title>
+</head>
+
+<body onload="formobile()">
+	<div id="header">
+		<div id="menu">
+			<a href="index.html"><img id="logo" src="image/logo.png" onclick="showBigImage()"></a>
+			<ul id="menu-bar">
+				<li class="menu-item" onclick="showSmallImage(), showFrame(0), forMobile()"><a href="index.html">HOME</li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(1)"><a href="index.html#about">ABOUT</a></li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(2)"><a href="index.html#full-menu">MENU</a></li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(3)">ORDER</li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(4)"><a href="index.html#contact">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="image-child"><div id="bg-image"></div><p>Call us now to get delievery or pick up: 914-686-6888</p></div>
+	
+	<div id="menu-content">
+		<div class="title-header"><img src="image/header-line.png"><p>MENU</p><img src="image/header-line2.png"></div>
+		<br><br>
+		<div id="appetizers" class="food"> 
+			<h2>APPETIZERS</h2>
+			<hr>
+			Spring Rolls(4pcs) <span class="little-text">7.5</span><br>
+			Chicken Nuggets(Salt&pepper) <span class="little-text">7</span><br>
+			<img class="food-img1" src="image/spring-roll.png" width="180px">
+			Chicken Wings(8pcs) <span class="little-text">7.5</span>
+			<ul>
+				<li>Spicy lime</li>
+				<li>Sweet chill</li>
+				<li>Lemongrass & garlic</li>
+			</ul>
+			Fried Calamari(Basil & garlic) <span class="little-text">10</span><br>
+			Summer Roll(2pcs) <span class="little-text">6.5</span>
+			<ul>
+				<li>Shrimp(classic)</li>
+				<li>Grilled Short Rib</li>
+				<li>Grilled Chicken</li>
+				<li>Seasoned Tofu</li>
+			</ul>
+			Brussel Sprouts(Lemongrass & garlic) <span class="little-text">6.5</span><br>
+			Papaya Salad
+			<ul>
+				<li>Shrimp <span class="little-text">8</span></li>
+				<li>Beef Jerky <span class="little-text">8.5</span></li>
+			</ul>
+			Edamame(Tossed with soy & garlic) <span class="little-text">6.5</span><br>
+			Chicken & Cabbage Salad <span class="little-text">7.5</span><br>
+			Chicken/Pork Sausage(3pcs) <span class="little-text">6</span><br>
+			<span class="little-text">Grilled then served with lettuce wrap, cucumbers, and herbs</span>
+			<img class="food-img1" src="image/home-page-food.png" width="350px" >
+		</div>
+
+		<div id="riceNoodle" class="food">
+			<h2>RICE & NOODLE</h2><hr>
+			Grilled Pepper Shrimp <span class="little-text">12</span><br>
+			Grilled Lemongrass Chicken <span class="little-text">9</span><br>
+			Grilled Soy & Garlic Short Rib <span class="little-text">11</span><br>
+			Grilled Pork Chop <span class="little-text">9.5</span><br>
+			Marinated Sliced Pork <span class="little-text">9.5</span><br>
+			Seasoned Tofu <span class="little-text">9.5</span><br>
+		</div>
+
+		<div id="banh-mi" class="food">
+			<h2>BANH MI</h2><hr>
+			Original <span class="little-text">7</span><br>
+			<span class="little-text">Vietnamese ham, roasted ground pork, and mayo</span><br>
+			Grilled Chicken <span class="little-text">7.5</span><br>
+			Grilled Sliced Pork <span class="little-text">7.5</span><br>
+			<img class="food-img1" src="image/banh-mi.jpg" width="200px;">
+			Grilled Short Ribs <span class="little-text">9.5</span><br>
+			Fried Catfish <span class="little-text">8.5</span><br>
+			Extra Add-on <span class="little-text">1.5</span><br>
+			<span class="little-text">Fried Egg </span><br>
+			<span class="little-text">Avocado </span><br>
+		</div>
+		<div id="pho" class="food">
+			<h2>PHO</h2><hr>
+			Classic Sliced Beef <span class="little-text">1.5</span><br>
+			Beef Ball <span class="little-text">1.5</span><br>
+			Beef Combo <span class="little-text">1.5</span><br>
+			Grilled Pork Chop <span class="little-text">1.5</span><br>
+			Shredded Chicken <span class="little-text">1.5</span><br>
+			Vegetarian <span class="little-text">1.5</span><br>
+			Beef Brisket <span class="little-text">1.5</span><br>
+			Seafood <span class="little-text">1.5</span><br>
+			<span class="little-text">Shrimp, calamari, fish cake and fried fish balls in a chicken broth</span><br>
+			
+		</div>
+
+		<div id="bubble-tea">
+			<h2>BOBA TEA</h2>
+			<hr >
+			<table>
+				<tr><td>Boba Tea</td><td><span class="little-text">4</span></td></tr>
+				<tr><td>Slush</td><td><span class="little-text">4.5</span></td></tr>
+			</table>
+			<div id="favor" class="bubble-drink">
+				<h3>Favor</h3>
+				<ul>
+					<li>Green Apple</li>
+					<li>Passion Fruit</li>
+					<li>Mango</li>
+					<li>Pinapple</li>
+				</ul>
+				<ul>
+					<li>Peach</li>
+					<li>Grapefruit</li>
+					<li>Strawberry</li>
+					<li>Lychee</li>
+				</ul>
+			</div>
+				
+			<div id="topping" class="bubble-drink">
+				<h3>Topping</h3>
+				<ul>
+					<li>Tapioca Ball</li>
+					<li>Grass Jelly</li>
+					<li>Rainbow Jelly</li>
+					<li>Lychee Jelly</li>
+				</ul>
+				<ul>
+					<li>Cocounut Jelly</li>
+					<li>Almond Jelly</li>
+					<li>Strawberry</li>
+					<li>Contain Diary</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="hot-cold-drink">
+			<h2>HOT DRINKS</h2><hr>
+			Black Tea/Green Tea <span class="little-text">3</span><br>
+			Milk Tea <span class="little-text">3.5</span><br>
+			Brown Sugar Ginger Tea <span class="little-text">3.5</span><br>
+			Honey Lemon Tea <span class="little-text">3.5</span><br>
+		</div>
+		<div class="hot-cold-drink">
+			<h2>HOT DRINKS</h2><hr>
+			Milk Tea(black tea) <span class="little-text">4</span><br>
+			Taro Milk Tea <span class="little-text">4</span><br>
+			Honeydew <span class="little-text">4</span><br>
+		</div>
+	
+	</div>
+	<div style="position:relative;height:100px;width:100%;clear:both"></div>
+	<div id="selection"><img src="image/menu.png" onclick="openMenu()" height="130" width="150" >
+	</div>
+	<div id="mobileMenu">
+		<ul id="mobile-menu-bar">
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="index.html">HOME</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="index.html#about">ABOUT</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="index.html#full-menu">MENU</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="index.html#contact">CONTACT</a></li>
+			
+		</ul>
+                <div  onclick="closeMenu()"  style="width:100%;height:80px;text-align:center;"><imgsrc="image/up.png" height="50px;" width="80px;"></div>
+	</div>
+
+	<div id="footer">
+
+	</div>
+</body>
+</html>

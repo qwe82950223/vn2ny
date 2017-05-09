@@ -1,0 +1,272 @@
+<DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Permanent+Marker|Roboto" rel="stylesheet">   
+<meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+var slideIndex = 0;
+var initial;
+function showSlides() {
+    Slides(slideIndex+=1);
+    initial= setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+
+
+function plusSlides(n) {
+  Slides(slideIndex += n);
+  clearTimeout( initial )
+  initial = setTimeout(showSlides, 6000); 
+}
+
+function currentSlide(n) {
+  Slides(slideIndex = n);
+  clearTimeout( initial )
+  initial = setTimeout(showSlides, 6000); 
+}
+
+function Slides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+function myMap() {
+				var myLatlng = new google.maps.LatLng(41.0288068,-73.7653829);
+				var mapOptions = {
+					zoom: 15,
+					center: myLatlng
+				}
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				var marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					title: 'Hello World!'
+				});
+}
+google.maps.event.addDomListener(window, 'load', myMap);
+
+var open=true;
+
+function openMenu(){
+	if(open){
+		document.getElementById('mobileMenu').style.display="block";
+		open=false;
+	}
+	else{
+		closeMenu();
+	}
+			
+}
+		
+function closeMenu(){
+	document.getElementById('mobileMenu').style.display="none";
+	open=true;
+}
+
+function res(){
+	closeMenu();
+}
+function detectmob() { 
+			if( navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/webOS/i)
+				|| navigator.userAgent.match(/iPhone/i)
+				|| navigator.userAgent.match(/iPad/i)
+				|| navigator.userAgent.match(/iPod/i)
+				|| navigator.userAgent.match(/BlackBerry/i)
+				|| navigator.userAgent.match(/Windows Phone/i)
+				){
+					return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+function formobile(){
+			if(detectmob()){
+                                document.body.style.backgroundImage = "none";
+				document.getElementById('body-part').style.minWidth="1050px";
+                                document.getElementById('menu-part').style.backgroundImage="url('image/slider1.jpg')";
+                                document.getElementById('menu-part').style.backgroundSize="cover";
+                                document.getElementById('body-part').style.left="10px";
+                                document.getElementById('menu-part').style.minWidth="1050px";
+                                document.getElementById('menu-part').style.left="10px";
+                                document.getElementById('contact-part').style.minWidth="1050px";
+                                document.getElementById('contact-part').style.left="10px";
+                                document.getElementById('footer').style.left="0";
+                                document.getElementById('selection').style.left="0";
+                                 document.getElementById('selection').style.minWidth="1050px";
+			}
+		};
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+<title>Restaurant</title>
+</head>
+
+<body onload="showSlides(), myMap(),formobile()" onresize="res()">
+
+	<div id="header">
+		<div id="menu">
+			<a href="index.html"><img id="logo" src="image/logo.png" onclick="showBigImage()"></a>
+			<ul id="menu-bar">
+				<li class="menu-item" onclick="showSmallImage(),forMobile()"><a href="index.html">HOME</li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(1)"><a href="#about">ABOUT</a></li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(2)"><a href="#full-menu">MENU</a></li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(3)">ORDER</li>
+				<li class="menu-item" onclick="showSmallImage(), showFrame(4)"><a href="#contact">CONTACT</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="body-part">
+		<!image slide begin>
+		<div id="image-large">
+			<div class="bg"></div>
+			<div id="image-content">
+				<p>A Vietnamese Restaurant</p>
+				<p>THE BANH MI SHOP</p>
+				<div id="about">SEE MENU & ORDER</div>
+			</div>
+		</div>
+		<!end image slide>
+
+		<!body content begin>
+		<div id="body-content">
+			<div id="about-part">
+				<div class="title-header"><img src="image/frame-l1.png"><p><span style="font-size:60px;">A</span>BOUT</p><img src="image/frame-r1.png"></div>
+                                <br>
+				<p id="about-content">Vietnamese food is considered one of the healthiest cuisines worldwide due to its use of fresh herbs, vegetables and meats. Authentic Vietnamese cooking relies on an abundance of fresh vegetables and ingredients with minimal use of dairy and oil.  The Banh Mi Shop is committed to serve traditional healthy Vietnamese food at a reasonable price. Our dishes are packed with flavor by using fresh clean vegetables, herbs, spices and ingredients loaded with nutrients, vitamins and minerals.  We take advantage of the many fresh flavors of Vietnamese cuisine and prepare our food with the most healthy cooking methods. All of our dishes are hand crafted the way the Le family has been cooking at home for generations. We want to consistently provide our customers with delicious food and impeccable service. Our mission at Monarch 9 is to provide a healthy Vietnamese cuisine in a unique environment with friendly yet un-intrusive service.
+				</p>
+				<div class="business-hour">
+					<h4>BUSINESS HOURS</h4>
+					<p>Monday-Friday:11:00am-11:00pm</p>
+					<p>Saturday:10:00am-11:00pm</p>
+					<p>Sunday:10:00am-10:00pm</p>
+				</div>
+				<div class="business-hour">
+					<h4>LUNCH</h4>
+					<p>Monday-Friday:11:00am-11:00pm</p>
+				</div>
+				<div class="business-hour">
+					<h4>DINNER</h4>
+					<p>Monday-Friday:11:00am-11:00pm</p>
+					<p>Saturday:10:00am-11:00pm</p>
+				</div>
+				<h4 style="font-size:20px;text-align: center;font-family: 'Kaushan Script', cursive;;clear:both;">(FREE DELIVERY MIN. $15)<h4>
+
+				<div id="gallery">
+					<h4 style="font-size:30px;text-align: center;font-family: 'Kaushan Script', cursive;;clear:both;">GALLERY</h4>
+					<div>
+						<img src="image/background.jpg">
+						<img src="image/background2.jpg">
+						<img src="image/background3.jpg">
+						<img src="image/background3.jpg">
+						<img src="image/background2.jpg">
+						<img src="image/background.jpg">
+					</div>
+				</div>
+
+<h4 style="font-size:30px;text-align: center;font-family: 'Kaushan Script', cursive;;clear:both;">GALLERY</h4>
+			<div id="img-slide">
+			<div class="mySlides fade" >
+    			<img src="image/background.jpg" height="100%;" width="100%;">
+  			</div>
+
+  			<div class="mySlides fade">
+    			<img src="image/background2.jpg"  height="100%;" width="100%;">
+  			</div>
+
+  			<div class="mySlides fade">
+    			<img src="image/background3.jpg" height="100%;" width="100%;">>
+  			</div>
+
+  			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<div id="dot" >
+ 			<span class="dot" onclick="currentSlide(1)"></span>
+  			<span class="dot" onclick="currentSlide(2)"></span>
+  			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+
+
+
+
+
+
+
+				
+				<div id="home-page-connect">
+					<h3 style="font-size:30px;text-align: center;font-family: 'Kaushan Script', cursive;">GET CONNECT</h3>
+					<div><a href="https://www.facebook.com/The-Banh-Mi-Shop-548471218676778/" target="_blank"><img src="image/facebook.png" width="80px;"></a></div>
+					<div><a href="https://imgrab.com/instagram/tbmshop_ny/3578723020/" target="_blank"><img src="image/instagram.png"  width="80px;"></a></div>
+					<div><a href="" target="_blank"><img src="image/twitter.png"  width="80px;"></a></div>
+				</div>
+				<br>
+				<div id="full-menu"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="menu-part">
+		<div class="bg"></div>
+		<div id="menu-content">
+				<div class="title-header" ><img src="image/frame-l1-white.png"><p style="color:white"><span style="font-size:60px;">M</span>ENUS</p><img src="image/frame-r1-white.png"></div>
+				<br><br>
+				<a href="menu.html#appetizers" target="_blank"><button class="menu-button left">APPETIZERS</button></a>
+				<a href="menu.html#rice-noodle" target="_blank"><button class="menu-button right">RICE & NOODLE</button></a>
+				<a href="menu.html#banh-mi" target="_blank"><button class="menu-button left">BANH MI</button></a>
+				<a href="menu.html#pho" target="_blank"><button class="menu-button right">PHO</button></a>
+				<a href="menu.html#drink" target="_blank"><button class="menu-button left">DRINK</button></a>
+		</div>
+		<div id="contact"></div>
+	</div>
+
+
+	<div id="contact-part">
+		<div id="contact-content">
+				<div class="title-header" ><img src="image/frame-l1.png"><p style="width:200px"><span style="font-size:60px;">C</span>ONTACT</p><img src="image/frame-r1.png"></div>
+				<br><br>
+				<div class="contact-info"><a href="http://maps.google.com/?q=148 B Mamaroneck Ave, White Plains, NY, 10601"><img src="image/address.png" width="30px;" ></a><br><br>148 8 Mamaroneck Ave,<br>White Plains, NY 10601</div>
+				<div class="contact-info"><a><img src="image/email.png" width="30px;" ></a><br><br>linxiao0106@gmail.com</div>
+				<div class="contact-info"><a><img src="image/phone.png" width="30px;" ></a><br><br>(914)686-6888<br>(917)686-9888</div>
+		</div>
+		<div id="map-canvas">
+		</div>
+	</div>
+	<div id="selection"><img src="image/menu.png" onclick="openMenu()" height="130" width="150" >
+	</div>
+	<div id="mobileMenu">
+		<ul id="mobile-menu-bar">
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="index.html">HOME</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="#about">ABOUT</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="#full-menu">MENU</a></li>
+			<li class="mobile-menu-item" onclick="closeMenu()"><a href="#contact">CONTACT</a></li>
+			
+		</ul>
+        <div onclick="closeMenu()"  style="width:100%;height:80px;text-align:center;"><img src="image/up.png" height="50px;" width="80px;"></div>
+	</div>
+	<!end body content>
+	
+
+	
+
+	<div id="footer">
+
+	</div>
+</body>
+</html>
